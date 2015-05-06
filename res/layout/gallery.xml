@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <Gallery
+		android:id="@+id/good_detail_images_listview1"
+		android:layout_width="fill_parent"
+		android:layout_height="@dimen/global_goods_shop_size"
+		android:gravity="center_vertical"
+       	android:spacing="15dp"
+	/>
+
+</LinearLayout>

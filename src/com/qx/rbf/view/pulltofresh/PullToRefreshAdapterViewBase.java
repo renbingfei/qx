@@ -39,8 +39,10 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
 		refreshableView.setOnScrollListener(this);
 	}
 
+	@Override
 	abstract public ContextMenuInfo getContextMenuInfo();
 
+	@Override
 	public final void onScroll(final AbsListView view, final int firstVisibleItem, final int visibleItemCount,
 			final int totalItemCount) {
 
@@ -60,6 +62,7 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
 		}
 	}
 
+	@Override
 	public final void onScrollStateChanged(final AbsListView view, final int scrollState) {
 		if (null != onScrollListener) {
 			onScrollListener.onScrollStateChanged(view, scrollState);
@@ -111,17 +114,20 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
 		onScrollListener = listener;
 	}
 
+	@Override
 	protected void addRefreshableView(Context context, T refreshableView) {
 		refreshableViewHolder = new FrameLayout(context);
 		refreshableViewHolder.addView(refreshableView, ViewGroup.LayoutParams.FILL_PARENT,
 				ViewGroup.LayoutParams.FILL_PARENT);
-		addView(refreshableViewHolder, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, 0, 1.0f));
+		addView(refreshableViewHolder, new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT, 0, 1.0f));
 	};
 
+	@Override
 	protected boolean isReadyForPullDown() {
 		return isFirstItemVisible();
 	}
 
+	@Override
 	protected boolean isReadyForPullUp() {
 		return isLastItemVisible();
 	}

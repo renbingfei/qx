@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bug_background"
+    android:orientation="vertical" >
+        <TextView 
+            android:id="@+id/tvx1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+   			android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="请选择数量"
+            
+            />
+        <EditText 
+            android:id="@+id/goodsNumber"
+            android:layout_width="wrap_content"
+   			android:layout_height="wrap_content"
+   			android:layout_alignParentRight="true"
+   			android:layout_marginTop="15dp"
+   			android:digits="1234567890."
+   			android:layout_marginRight="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="输入数目"
+            
+            />
+        
+        <TextView 
+            android:id="@+id/tvx2"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+   			android:layout_height="wrap_content"
+   			android:layout_below="@id/tvx1"
+            android:textColor="@color/black"
+            android:text="本订单价格"
+            
+            />
+        <TextView
+            android:id="@+id/goodsPrice"
+            android:layout_width="wrap_content"
+   			android:layout_height="wrap_content"
+   			android:layout_below="@id/tvx1"
+   			android:layout_alignParentRight="true"
+   			android:layout_marginTop="30dp"
+   			android:layout_marginRight="20dp"
+            android:textColor="@color/black"
+            android:text="0 元"
+            />
+        <TextView 
+            android:id="@+id/ensureBuy"
+            android:layout_marginTop="30dp"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+			android:gravity="center"
+   			android:layout_below="@id/goodsPrice"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/ensure_buy"
+            android:text="确认购买"
+            
+            />
+</RelativeLayout>

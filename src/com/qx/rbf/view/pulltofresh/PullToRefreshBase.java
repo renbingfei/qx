@@ -149,6 +149,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout {
 	 * @deprecated
 	 * @return The Refreshable View which is currently wrapped
 	 */
+	@Deprecated
 	public final T getAdapterView() {
 		return refreshableView;
 	}
@@ -422,7 +423,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout {
 	}
 
 	protected void addRefreshableView(Context context, T refreshableView) {
-		addView(refreshableView, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, 0, 1.0f));
+		addView(refreshableView, new LinearLayout.LayoutParams(android.view.ViewGroup.LayoutParams.FILL_PARENT, 0, 1.0f));
 	}
 
 	/**

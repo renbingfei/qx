@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">QX</string>
+    <string name="app_name">抢鲜</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="prompt">提醒</string>
+    <string name="quit_desc">退出应用</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
 	<!-- 筛选框 -->
     <string name="menu_settings">Settings</string>
     <string name="no_data">没有找到符合条件的房源</string>
@@ -12,4 +16,18 @@
     <string name="pull_to_refresh_release_label">释放刷新</string>
     <string name="pull_to_refresh_refreshing_label">加载中</string>
     <string name="pull_to_refresh_tap_label">点击刷新</string>
+    <string name="test_distance">&lt;100米</string>
+    <!-- 搜索 -->
+    <string name="searchLable"></string>
+	<string name="searchHint">输入商品名</string>
+	<string name="searchHintForShop">输入店铺名</string>
+	<string name="temp">2</string>
+	<style name="animation">  
+        <item name="android:windowEnterAnimation">@anim/enter</item>   
+     <item name="android:windowExitAnimation">@anim/exit</item>   
+    </style> 
+    
+	<!-- 图片详情展示界面的两个id -->
+	<item type="id" name="first_tag"></item>
+	<item type="id" name="second_tag"></item>
 </resources>

@@ -3,6 +3,7 @@
     <color name="title_blue">#00B294</color>
     <color name="global_gray">#D9D9D9</color>
     <color name="global_light_gray">#EEEEEE</color>
+    <color name="global_goods_shop_name_color">#000000</color>
     <!-- 筛选框 -->
     <color name="popup_main_background">#b0000000</color>
     <color name="black">#000000</color>
@@ -10,4 +11,5 @@
     <color name="white">#ffffff</color>
     <color name="no_color">#00000000</color>
     
+    <color name="blue">#00B294</color>
 </resources>

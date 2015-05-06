@@ -33,6 +33,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 			super.setEmptyView(emptyView);
 		}
 
+		@Override
 		public ContextMenuInfo getContextMenuInfo() {
 			return super.getContextMenuInfo();
 		}
@@ -57,6 +58,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 		return ((InternalListView) getRefreshableView()).getContextMenuInfo();
 	}
 
+	@Override
 	public void setReleaseLabel(String releaseLabel) {
 		super.setReleaseLabel(releaseLabel);
 
@@ -68,6 +70,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 		}
 	}
 
+	@Override
 	public void setPullLabel(String pullLabel) {
 		super.setPullLabel(pullLabel);
 
@@ -79,6 +82,7 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 		}
 	}
 
+	@Override
 	public void setRefreshingLabel(String refreshingLabel) {
 		super.setRefreshingLabel(refreshingLabel);
 
@@ -105,14 +109,14 @@ public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView
 		if (mode == MODE_PULL_DOWN_TO_REFRESH || mode == MODE_BOTH) {
 			FrameLayout frame = new FrameLayout(context);
 			headerLoadingView = new LoadingLayout(context, MODE_PULL_DOWN_TO_REFRESH, releaseLabel, pullLabel, refreshingLabel);
-			frame.addView(headerLoadingView, FrameLayout.LayoutParams.FILL_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+			frame.addView(headerLoadingView, android.view.ViewGroup.LayoutParams.FILL_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 			headerLoadingView.setVisibility(View.GONE);
 			lv.addHeaderView(frame);
 		}
 		if (mode == MODE_PULL_UP_TO_REFRESH || mode == MODE_BOTH) {
 			FrameLayout frame = new FrameLayout(context);
 			footerLoadingView = new LoadingLayout(context, MODE_PULL_UP_TO_REFRESH, releaseLabel, pullLabel, refreshingLabel);
-			frame.addView(footerLoadingView, FrameLayout.LayoutParams.FILL_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+			frame.addView(footerLoadingView, android.view.ViewGroup.LayoutParams.FILL_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
 			footerLoadingView.setVisibility(View.GONE);
 			lv.addFooterView(frame);
 		}

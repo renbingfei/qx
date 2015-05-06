@@ -9,14 +9,11 @@ import com.qx.rbf.activity.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MyGridViewAdapter extends SimpleAdapter{
 

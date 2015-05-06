@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 全局下部导航条 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_light_gray"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:orientation="horizontal" >
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
+        >
+	    <ImageView 
+	        android:id="@+id/good_love"
+	        android:layout_width="80dp"
+	        android:layout_height="@dimen/global_navigate_down_size"
+	        android:clickable="true"
+	        android:src="@drawable/good_love_default"
+	        />
+	</LinearLayout>
+	<LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        >
+	    <TextView 
+	        android:id="@+id/good_immediate_buy"
+	        android:layout_width="80dp"
+	        android:layout_height="@dimen/global_navigate_down_size"
+	        android:clickable="true"
+	        android:gravity="center"
+	        android:background="@drawable/ic_register"
+	        android:textColor="@color/white"
+	        android:text="立即抢购"
+	        />
+	</LinearLayout>
+</RelativeLayout>
