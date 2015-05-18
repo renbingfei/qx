@@ -324,11 +324,17 @@ public class RegisterActivity extends ActionBarActivity implements OnClickListen
 			switch(msg.what){
 				case 0:
 					Toast.makeText(RegisterActivity.this, "验证码:666666", 2000).show();
+					//
+					System.out.println("JSESSIONID="+Common.JSESSIONID);
 					break;
 				case 1:
 					Bundle bundle = msg.getData();
 					Toast.makeText(RegisterActivity.this, "失败原因: "+bundle.getString("reason"), 2000).show();
 					break;
+				case 2:
+					Toast.makeText(RegisterActivity.this, "注册成功", 2000).show();
+					//Common.setSessionId();
+					System.out.println("JSESSIONID="+Common.JSESSIONID);
 				default:
 					break;
 			}
@@ -444,7 +450,7 @@ public class RegisterActivity extends ActionBarActivity implements OnClickListen
 				System.out.println(data.toJSONString());
 				JSONObject header = data.getJSONObject("header");
 				if("success".equals(header.getString("result"))){
-					msg.what = 0;
+					msg.what = 2;
 				}else{
 					msg.what = 1;
 					Bundle bundle = new Bundle();

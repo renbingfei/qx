@@ -2,8 +2,13 @@ package com.qx.rbf.utils;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import org.apache.http.cookie.Cookie;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.DefaultedHttpContext;
 
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -12,6 +17,7 @@ import net.tsz.afinal.FinalBitmap;
 import net.tsz.afinal.FinalHttp;
 
 public class Common {
+	public static String JSESSIONID = "";
 	public static boolean isLogin = false;  //是否登录
 	public static LocationClient locationClient = null;  //百度定位
 	public static final int UPDATE_TIME = 5000;   //定位刷新时间
@@ -85,6 +91,20 @@ public class Common {
 	//取消注册监听函数
 	public static void unregisterLocation(){
 		locationClient.unRegisterLocationListener( myListener );    //注册监听函数
+	}
+	
+	//获取session
+	public static void setSessionId(){
+		DefaultHttpClient client = (DefaultHttpClient)Common.fhttp.getHttpClient();
+		List<Cookie> list = client.getCookieStore().getCookies();
+		if(list.isEmpty()){
+		}else{
+			for(Cookie cookie:list){
+				JSESSIONID = cookie.getValue();
+			}
+		}
+		
+		Common.fhttp.addHeader("Cookie", "JSESSIONID="+JSESSIONID);
 	}
 	
 }

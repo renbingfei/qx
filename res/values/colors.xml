@@ -12,4 +12,6 @@
     <color name="no_color">#00000000</color>
     
     <color name="blue">#00B294</color>
+    
+    <color name="transparent">#00000000</color>
 </resources>

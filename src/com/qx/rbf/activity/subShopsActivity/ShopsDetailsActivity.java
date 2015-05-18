@@ -13,6 +13,7 @@ import com.qx.rbf.activity.MainActivity;
 import com.qx.rbf.activity.MineActivity;
 import com.qx.rbf.activity.R;
 import com.qx.rbf.activity.subGoodsActivity.GoodsDetailsActivity;
+import com.qx.rbf.activity.subGoodsActivity.GoodsEvaluateActivity;
 import com.qx.rbf.adapter.ShopOwnGoodsAdapter;
 import com.qx.rbf.adapter.ShopsDetailImagesAdapter;
 import com.qx.rbf.utils.Common;
@@ -159,7 +160,7 @@ public class ShopsDetailsActivity extends ActionBarActivity implements OnClickLi
 			shopOwnGoodsAdapter = new ShopOwnGoodsAdapter(mDatas, ShopsDetailsActivity.this);
 			shop_own_goods_listView.setAdapter(shopOwnGoodsAdapter);
 			shop_own_goods_listView.setOnItemClickListener(new MyItemListener());
-			
+			shop_detail_order_number.setOnClickListener(this);
 		}
 		
 		//测试使用
@@ -298,6 +299,11 @@ public class ShopsDetailsActivity extends ActionBarActivity implements OnClickLi
 			}else if( v == goods_detail_phone){
 				//拨打座机
 				Intent intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+shop_detail_call_belong_shop.getText().toString().trim()));
+				startActivity(intent);
+			}else if(v == shop_detail_order_number){
+				//商品评价
+				Intent intent = new Intent();
+				intent.setClass(ShopsDetailsActivity.this, GoodsEvaluateActivity.class);
 				startActivity(intent);
 			}
 		}

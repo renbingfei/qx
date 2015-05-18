@@ -328,7 +328,12 @@ public class GoodsActivity extends ActionBarActivity implements OnClickListener,
 	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (KeyEvent.KEYCODE_BACK == keyCode) {			
+		if (KeyEvent.KEYCODE_BACK == keyCode) {	
+			//返回商品主页面
+			Intent intent = new Intent();
+			intent.setClass(GoodsActivity.this, MainActivity.class);
+			startActivity(intent);
+			finish();
 			return false;
 		}
 		return super.onKeyDown(keyCode, event);

@@ -132,6 +132,7 @@ public class GoodsDetailsActivity extends ActionBarActivity implements OnClickLi
 		good_detail_images_listview.setOnItemClickListener(this);
 		good_detail_belong_shop.setOnClickListener(this);
 		good_detail_location.setOnClickListener(this);
+		good_detail_rate.setOnClickListener(this);
 		good_detail_call_belong_shop_layout.setOnClickListener(this);
 		
 	}
@@ -286,6 +287,9 @@ public class GoodsDetailsActivity extends ActionBarActivity implements OnClickLi
 	        popupWindow.showAtLocation(parent, Gravity.BOTTOM, 0, 0);  
 		}else if(v == good_detail_rate){
 			//商品评价
+			Intent intent = new Intent();
+			intent.setClass(GoodsDetailsActivity.this, GoodsEvaluateActivity.class);
+			startActivity(intent);
 			
 		}else if(v == goods_detail_phone_cancel){
 			 if (popupWindow.isShowing()) {  
@@ -311,10 +315,16 @@ public class GoodsDetailsActivity extends ActionBarActivity implements OnClickLi
             if(".0".equals(totalPrice)){
             	Toast.makeText(GoodsDetailsActivity.this, "购买数量不能为0", 3000).show();
             }else{
+            	//开始购买，发送订单
             	Toast.makeText(GoodsDetailsActivity.this, totalPrice+" 元", 3000).show();
             	if(dialog.isShowing()){
             		dialog.dismiss();
             	}
+            	//购买完毕，跳转到评价页面，实际调试时，需放到回调函数中
+            	//在跳转时，需加入商品、商家id
+            	Intent intent = new Intent();
+            	intent.setClass(GoodsDetailsActivity.this, EvaluateActivity.class);
+            	startActivity(intent);
             }
 		}
 	}

@@ -3,8 +3,10 @@ package com.qx.rbf.activity;
 
 import com.qx.rbf.MyApplication;
 import com.qx.rbf.utils.*;
+import com.qx.rbf.activity.subMineActivity.MyFishTicketsActivity;
 import com.qx.rbf.activity.subMineActivity.MyLovedGoods;
 import com.qx.rbf.activity.subMineActivity.MyLovedShops;
+import com.qx.rbf.activity.subMineActivity.MyOrdersActivity;
 import com.qx.rbf.activity.subMineActivity.RegisterActivity;
 import com.qx.rbf.activity.subMineActivity.SettingActivity;
 
@@ -14,6 +16,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -170,6 +173,7 @@ public class MineActivity extends ActionBarActivity implements OnClickListener {
 		myOrders.setOnClickListener(this);
 		myGoodsLoved.setOnClickListener(this);
 		myShopsLoved.setOnClickListener(this);
+		myFishTickets.setOnClickListener(this);
 		logout.setOnClickListener(this);
 	}
 	public void initBottom(){
@@ -196,8 +200,23 @@ public class MineActivity extends ActionBarActivity implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if(v == call){
-		//拨打客服电话
-			
+			//拨打客服电话
+			new AlertDialog.Builder(MineActivity.this)
+							.setTitle("客服")
+							.setIcon(R.drawable.ic_prompt)
+							.setMessage("有问题？找客服！")
+							.setPositiveButton("拨打", new DialogInterface.OnClickListener() {
+								
+								@Override
+								public void onClick(DialogInterface dialog, int which) {
+									// TODO Auto-generated method stub
+									Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:10086"));
+									startActivity(intent);
+								}
+							})
+							.setNegativeButton("取消", null)
+							.show();
+							
 		}else if(v == setting){
 		//设置
 			Intent intent = new Intent(MineActivity.this, SettingActivity.class);
@@ -263,7 +282,9 @@ public class MineActivity extends ActionBarActivity implements OnClickListener {
 			finish();
 		}else if(v == myOrders){
 			//进入我的购物车
-			
+			Intent intent = new Intent();
+			intent.setClass(MineActivity.this, MyOrdersActivity.class);
+			startActivity(intent);
 		}else if(v == myGoodsLoved){
 			//进入我关注的商品
 			Intent intent = new Intent();
@@ -278,6 +299,10 @@ public class MineActivity extends ActionBarActivity implements OnClickListener {
 			//退出登录
 			Common.isLogin = false;
 			setContentView1();
+		}else if(v == myFishTickets){
+			Intent intent = new Intent();
+			intent.setClass(MineActivity.this, MyFishTicketsActivity.class);
+			startActivity(intent);
 		}
 	}
 	//返回键
